@@ -13,15 +13,16 @@ class Profile(models.Model):
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
     modified_on = models.DateTimeField(auto_now=True)
+    first_name = models.CharField(max_length=60, blank=True)
+    last_name = models.CharField(max_length=60, blank=True)
+    country = models.CharField(max_length=60, blank=True)
+    username = models.CharField(max_length=60, blank=True)
     description = models.TextField(blank=True)
     image = models.ImageField(
         upload_to='images/',
         default='../default_profile_qdjgyp',
     )
-    first_name = models.CharField(max_length=60, blank=True)
-    last_name = models.CharField(max_length=60, blank=True)
-    country = models.CharField(max_length=60, blank=True)
-    username = models.CharField(max_length=60, blank=True)
+    
    
 
     class Meta:

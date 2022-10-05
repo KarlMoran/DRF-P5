@@ -19,10 +19,10 @@ class ProfileSerializer(serializers.ModelSerializer):
             'owner',
             'created_on',
             'modified_on',
-            'description',
-            'image',
             'first_name',
             'last_name',
-            'username',
             'country',
+            'username',
+            'description',
+            'image',
         ]
