@@ -11,8 +11,8 @@ class Profile(models.Model):
     Profile model for database.
     """
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
-    created_on = models.DateTimeField(auto_now_add=True)
-    modified_on = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     first_name = models.CharField(max_length=60, blank=True)
     last_name = models.CharField(max_length=60, blank=True)
     country = models.CharField(max_length=60, blank=True)
@@ -30,7 +30,7 @@ class Profile(models.Model):
         Display profiles in order they were created.
         Newest first.
         """
-        ordering = ['-created_on']
+        ordering = ['-created_at']
 
     def __str__(self):
         """

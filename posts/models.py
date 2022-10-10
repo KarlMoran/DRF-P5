@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
 class Post(models.Model):
     """
     Post model, related to 'owner', i.e. a User instance.
@@ -39,10 +38,11 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True)
-    camera = models.CharField(
-        max_length=10,
+    description = models.TextField(blank=True)
+    camera_filter = models.CharField(
+        max_length=23,
         choices=camera_medium_choices,
-        default='none'
+        default='normal'
     )
     image = models.ImageField(
         upload_to='images/', default='../default_post_fkfygc', blank=True
