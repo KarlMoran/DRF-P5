@@ -56,6 +56,12 @@ INSTALLED_APPS = [
 
     'rest_framework.authtoken', 
     'dj_rest_auth', 
+
+    'django.contrib.sites', 
+    'allauth', 
+    'allauth.account', 
+    'allauth.socialaccount', 
+    'dj_rest_auth.registration',
     
     'profiles',
     'posts',
@@ -64,6 +70,17 @@ INSTALLED_APPS = [
     'followers',
 
 ]
+
+SITE_ID = 1
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [( 
+        'rest_framework.authentication.SessionAuthentication' 
+        if 'DEV' in os.environ 
+        else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
+        )]
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
