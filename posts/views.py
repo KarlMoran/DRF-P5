@@ -3,7 +3,6 @@ from rest_framework import generics, permissions, filters
 from drf_p5.permissions import IsOwnerOrReadOnly
 from .models import Post
 from .serializers import PostSerializer
-from django_filters.rest_framework import DjangoFilterBackend
 
 
 class PostList(generics.ListCreateAPIView):
@@ -20,19 +19,11 @@ class PostList(generics.ListCreateAPIView):
     filter_backends = [
         filters.OrderingFilter,
         filters.SearchFilter,
-        DjangoFilterBackend,
     ]
     search_fields = [
         'owner__username',
         'title',
     ]
-    filterset_fields = [
-        'owner__profile', 
-        'owner__followed__owner__profile', 
-        'likes__owner__profile',
-    ]
-
-
     ordering_fields = [
         'likes_count',
         'comments_count',
