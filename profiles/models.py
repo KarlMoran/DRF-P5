@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 
 # Class provided by DRF-API walkthrough, updates and modifications made. 
 
+
 class Profile(models.Model):
     """
     Profile model for database.
@@ -23,8 +24,6 @@ class Profile(models.Model):
         default='../default_profile_qdjgyp',
     )
     
-   
-
     class Meta:
         """
         Display profiles in order they were created.
@@ -39,16 +38,10 @@ class Profile(models.Model):
         """
         return f"{self.username}'s profile."
 
-
 # Function provided by DRF-API walkthrough project. 
 
 def create_profile(sender, instance, created, **kwargs):
-    """
-    Function to initiate the creation of a user profile,
-    upon the creation of a new user.
-    """
     if created:
         Profile.objects.create(owner=instance)
-
 
 post_save.connect(create_profile, sender=User)
