@@ -7,6 +7,7 @@ from rest_framework.test import APITestCase
 # Create your tests here.
 # Class 3provided by DRF-API walkthrough.
 
+
 class PostListViewTests(APITestCase):
     def setUp(self):
         User.objects.create_user(username='karl', password='pass')
@@ -29,6 +30,7 @@ class PostListViewTests(APITestCase):
     def test_user_not_logged_in_cant_create_post(self):
         response = self.client.post('/posts/', {'title': 'a title'})
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
 
 class PostDetailViewTests(APITestCase):
     def setUp(self):

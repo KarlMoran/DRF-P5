@@ -50,7 +50,9 @@ REST_USE_JWT = True
 JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_SECURE = True
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
-REST_AUTH_SERIALIZERS = {'USER_DETAILS_SERIALIZER': 'drf_p5.serializers.CurrentUserSerializer'}
+REST_AUTH_SERIALIZERS = {
+    'USER_DETAILS_SERIALIZER': 'drf_p5.serializers.CurrentUserSerializer'
+    }
 
 
 # Quick-start development settings - unsuitable for production
@@ -94,16 +96,15 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
 
-    'rest_framework.authtoken', 
-    'dj_rest_auth', 
+    'rest_framework.authtoken',
+    'dj_rest_auth',
 
-    'django.contrib.sites', 
-    'allauth', 
-    'allauth.account', 
-    'allauth.socialaccount', 
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'dj_rest_auth.registration',
     'corsheaders',
-    
     'profiles',
     'posts',
     'comments',
@@ -199,4 +200,3 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-

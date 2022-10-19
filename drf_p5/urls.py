@@ -28,6 +28,5 @@ urlpatterns = [
     path('', include('likes.urls')),
     path('', include('followers.urls')),
     path('', root_route),
-    
 
 ]

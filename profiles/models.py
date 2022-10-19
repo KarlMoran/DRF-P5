@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-# Class provided by DRF-API walkthrough, updates and modifications made. 
+# Class provided by DRF-API walkthrough, updates and modifications made.
 
 
 class Profile(models.Model):
@@ -23,7 +23,7 @@ class Profile(models.Model):
         upload_to='images/',
         default='../default_profile_qdjgyp',
     )
-    
+
     class Meta:
         """
         Display profiles in order they were created.
@@ -38,10 +38,12 @@ class Profile(models.Model):
         """
         return f"{self.username}'s profile."
 
-# Function provided by DRF-API walkthrough project. 
+# Function provided by DRF-API walkthrough project.
+
 
 def create_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(owner=instance)
+
 
 post_save.connect(create_profile, sender=User)
