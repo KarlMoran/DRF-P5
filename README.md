@@ -4,8 +4,8 @@ This section of the project is the backend API database built to support the Rea
 
 <hr />
 
-* DEPLOYED API HEROKU <a href="https://drf-lookbook.herokuapp.com/" target="_blank">LINK HERE</a>
-* DEPLOYED FRONTEND HEROKU LINK - <a href="https://lookbook-p5.herokuapp.com/" target="_blank">LIVE SITE</a>
+* DEPLOYED API  <a href="https://drf-p5.onrender.com/" target="_blank">LINK HERE</a>
+* DEPLOYED FRONTEND HEROKU LINK - <a href="https://lookbook.onrender.com/" target="_blank">LIVE SITE</a>
 * DEPLOYED FRONTEND REPOSITORY <a href="https://github.com/KarlMoran/lookbook" target="_blank">ClICK HERE</a>
 
 <hr />
